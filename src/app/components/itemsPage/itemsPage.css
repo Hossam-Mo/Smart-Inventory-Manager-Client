@@ -60,3 +60,11 @@
   max-height: 350px;
   overflow-y: auto;
 }
+
+.items-loader,
+.items-notFount {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: gray;
+}

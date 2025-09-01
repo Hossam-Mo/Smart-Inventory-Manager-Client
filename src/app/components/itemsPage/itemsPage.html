@@ -38,16 +38,10 @@
 
     <button class="filter-button" (click)="applyFilters()">Apply</button>
   </div>
-  <!--  
-  <div class="Items-headers">
-    <div class="item">Name</div>
-    <div class="item">Quantity</div>
-    <div class="item">Price</div>
-  </div>-->
 
   <div class="items-list">
     @if (loading) {
-    <div>Loading Items...</div>
+    <div class="items-loader">Loading Items...</div>
 
     }@else { @for (item of items; track $index) {
     <item-component
@@ -57,7 +51,7 @@
     ></item-component>
 
     }@empty {
-    <div>No Items Found</div>
+    <div class="items-notFount">No Items Found</div>
     } }
   </div>
 </div>

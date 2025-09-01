@@ -42,12 +42,18 @@ export class AddItemComponent {
     this.itemService.addItem(newItem).subscribe({
       next: (data) => {
         console.log('Item added:', data);
+        this.alert('Item added successfully!');
       },
       error: (err) => {
         console.error('Error adding item:', err);
+        this.alert('Failed to add item. Please try again.');
       },
     });
 
     this.itemForm.reset();
+  }
+
+  alert(message: string) {
+    window.alert(message);
   }
 }
