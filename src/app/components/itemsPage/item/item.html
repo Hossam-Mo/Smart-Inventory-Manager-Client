@@ -1,0 +1,55 @@
+<div class="item-row">
+  @if (editMod) {
+
+  <div class="item-details">
+    <input
+      #nameInput
+      type="text"
+      class="input name"
+      placeholder="{{ item.name }}"
+      value="{{ item.name }}"
+    />
+
+    <input
+      #prInput
+      type="number"
+      min="0"
+      class="input price"
+      placeholder="{{ item.price }}"
+      value="{{ item.price }}"
+    />
+
+    <input
+      #quInput
+      type="number"
+      min="0"
+      class="input quantity"
+      placeholder="{{ item.quantity }}"
+      value="{{ item.quantity }}"
+    />
+  </div>
+
+  <div class="item-actions">
+    <button (click)="onEdit()" class="delete-button">Cancle</button>
+    <button
+      (click)="onConfirmEdit(nameInput.value, quInput.value, prInput.value)"
+      class="edit-button"
+    >
+      Confirm
+    </button>
+  </div>
+
+  }@else {
+
+  <div class="item-details">
+    <h3 class="item name">{{ item.name }}</h3>
+    <p class="item price">Price: {{ item.price }}</p>
+    <p class="item quantity">In Stock: {{ item.quantity }}</p>
+  </div>
+
+  <div class="item-actions">
+    <button (click)="onEdit()" class="edit-button">Edit</button>
+    <button (click)="onDelete()" class="delete-button">Delete</button>
+  </div>
+  }
+</div>

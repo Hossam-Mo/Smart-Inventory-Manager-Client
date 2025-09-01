@@ -1,0 +1,23 @@
+.nav {
+  padding: 20px;
+  border-bottom: 2px solid gray;
+}
+
+.nav_list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.list_item {
+  border: 1px solid gray;
+  padding: 5px 10px;
+  border-radius: 5%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.list_item:hover {
+  background-color: lightgray;
+}

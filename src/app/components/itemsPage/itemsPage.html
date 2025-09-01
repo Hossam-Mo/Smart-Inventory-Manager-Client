@@ -1,0 +1,63 @@
+<div class="items-page">
+  <div class="items-filters">
+    <label for="filter">Filter:</label>
+    <select class="filter_select" [(ngModel)]="selectedFilter" id="filter">
+      <option value="low-stock">Low Stock</option>
+      <option value="price-range">Price Range</option>
+    </select>
+
+    @if(selectedFilter === 'low-stock') {
+
+    <div class="low-stock-filter">
+      <input
+        class="filter-input"
+        type="number"
+        placeholder="Enter max stock"
+        [(ngModel)]="lowStockValue"
+      />
+    </div>
+    } @else {
+
+    <div>
+      <input
+        class="filter-input price-input"
+        type="number"
+        placeholder="Min Price"
+        [(ngModel)]="minPrice"
+      />
+      <input class="filter-input" type="number" placeholder="Max Price" [(ngModel)]="maxPrice" />
+    </div>
+
+    <label for="sort">Sort By:</label>
+    <select class="filter_select" [(ngModel)]="sortBy" id="sort">
+      <option value="name">Name</option>
+      <option value="price">Price</option>
+      <option value="quantity">Quantity</option>
+    </select>
+    }
+
+    <button class="filter-button" (click)="applyFilters()">Apply</button>
+  </div>
+  <!--  
+  <div class="Items-headers">
+    <div class="item">Name</div>
+    <div class="item">Quantity</div>
+    <div class="item">Price</div>
+  </div>-->
+
+  <div class="items-list">
+    @if (loading) {
+    <div>Loading Items...</div>
+
+    }@else { @for (item of items; track $index) {
+    <item-component
+      [item]="item"
+      (delete)="deleteItem($event)"
+      (edit)="updateItem($event)"
+    ></item-component>
+
+    }@empty {
+    <div>No Items Found</div>
+    } }
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.app {
+  min-height: 100vh;
+}
+
+.app_content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app_box {
+  margin-top: 50px;
+  border: 1px solid gray;
+  width: 400px;
+  box-shadow: 5px 5px 10px 0px gray;
+}

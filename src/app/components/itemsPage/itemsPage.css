@@ -1,0 +1,62 @@
+.items-page {
+  border-bottom: 1px solid gray;
+}
+
+.items-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+.filter_select {
+  width: 150px;
+  padding: 5px;
+  cursor: pointer;
+  font-family: cursive;
+  border: 1px solid gray;
+  border-radius: 3px;
+  text-align: center;
+}
+.filter-input {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 150px;
+}
+.price-input {
+  margin-right: 10px;
+}
+.filter-button {
+  padding: 8px 16px;
+  background-color: #3f3f3f;
+  border: 1px solid #3f3f3f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: cursive;
+  width: 150px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.filter-button:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.05);
+}
+.filter-button:active {
+  transform: scale(0.95);
+}
+
+.Items-headers {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border-bottom: 1px solid gray;
+}
+
+.items-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
